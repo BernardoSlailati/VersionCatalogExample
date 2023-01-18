@@ -1,0 +1,40 @@
+[versions]
+
+kotlin = "1.7.10"
+room = "2.4.3"
+lottie = "3.4.0"
+compose = "1.2.1"
+
+androidx_compose_bom = "2022.12.00"
+
+[libraries]
+
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+
+room_runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room_ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room_compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+room_testing = { module = "androidx.room:room-testing", version.ref = "room" }
+
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidx.compose.bom" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+compose_ui = { module = "androidx.compose.ui:ui" }
+compose_material = { module = "androidx.compose.material:material" }
+compose_material3 = { module = "androidx.compose.material3:material3" }
+compose_tooling_preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+compose_icons = { module = "androidx.compose.material:material-icons-extended" }
+
+compose_tooling_debug = { module = "androidx.compose.ui:ui-tooling" }
+compose_ui_test_manifest_debug = { module = "androidx.compose.ui:ui-test-manifest" }
+
+[bundles]
+
+room = ["room.runtime", "room.ktx"]
+# implementation
+compose = ["compose.ui", "compose.material", "compose.material3", "compose.tooling.preview", "compose.icons"]
+# debugImplementation
+compose_debug = ["compose.tooling.debug", "compose.ui.test.manifest.debug"]
+
+[plugins]
+
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
